@@ -17,10 +17,14 @@ export default function GameBoard() {
     const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
     function handleSelectSquare(rowIndex, colIndex) {
+
+        console.log('인덱스가 들어올까?');
+        console.log('인덱스가 들어올까? rowIndex',rowIndex);
+        console.log('인덱스가 들어올까? colIndex',colIndex);
         setGameBoard((prevGameBoard) => {
             const updatedBoard = [...prevGameBoard.map((innerArray => [...innerArray]))];
-            prevGameBoard[rowIndex][colIndex] = 'X';
-            return prevGameBoard;
+            updatedBoard[rowIndex][colIndex] = 'X';
+            return updatedBoard;
         });
     }
 
